@@ -1,0 +1,160 @@
+// .header{
+//     background-image: linear-gradient(to bottom right
+//     , rgba($color-primary-light, 0.801)
+//     ,rgba($color-primary-dark, 0.801))
+//     ,url(../img/hero-small.jpg);
+//     height: 85vh;
+//     background-size: cover;
+//     background-position: top;
+//     position: relative;
+
+//     //feature query
+//     @supports ((clip-path: polygon(0 0, 100% 0, 100% 75vh, 0 100%)) or (-webkit-clip-path: polygon(0 0, 100% 0, 100% 75vh, 0 100%))){
+//         -webkit-clip-path: polygon(0 0, 100% 0, 100% 75vh, 0 100%);
+//         clip-path: polygon(0 0, 100% 0, 100% 75vh, 0 100%);
+//         height: 85vh;
+//     }
+
+//     @media only screen and (min-resolution: 192dpi) and (min-width: 37.5rem),
+//     (-webkit-min-device-pixel-ratio: 2) and (min-width: 37.5rem)     //600px
+//     , (min-width: 125rem){    //2000px
+//         background-image: linear-gradient(to bottom right
+//         , rgba($color-primary-light, 0.801)
+//         ,rgba($color-primary-dark, 0.801))
+//         ,url(../img/hero.jpg);
+//     }
+
+//     @include respond(tab-port){
+//         -webkit-clip-path: polygon(0 0, 100% 0, 100% 85vh, 0 100%);
+//         clip-path: polygon(0 0, 100% 0, 100% 85vh, 0 100%);
+//     }
+
+//     &__logo-box{
+//         position: absolute;
+//         top: 4rem;
+//         left: 4rem;
+//     }
+
+//     &__logo{
+//         height: 3.5rem;
+//     }
+
+//     &__logo:hover{
+//         animation: moveInLeft 1s ease-in;
+//     }
+
+//     &__text-box{
+//         position: absolute;
+//         top: 40%;
+//         left: 50%;
+//         transform: translate(-50%, -50%);
+//         text-align: center;
+//     }
+// }
+// @import "./abstract/variables";
+
+@import "../abstract/variables";
+@import url("https://css.gg/chevron-down-o.css");
+
+@mixin flex-cotainer($gap) {
+  display: flex;
+  flex-direction: column;
+  gap: $gap;
+}
+
+@mixin inputs($bg-color) {
+  background-color: $bg-color;
+  padding: 1rem;
+  border-radius: 5px;
+  color: $color-white;
+  border: none;
+  outline: none;
+  //   width: 1.15rem;
+}
+
+@mixin select-icon() {
+  appearance: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  -ms-appearance: none;
+  background-position: calc(100% - 12px) center !important;
+  background: url("data:image/svg+xml,<svg width='20' height='20' viewBox='0 0 24 24' fill='none' xmlns='http://www.w3.org/2000/svg'><path d='M7.75745 10.5858L9.17166 9.17154L12.0001 12L14.8285 9.17157L16.2427 10.5858L12.0001 14.8284L7.75745 10.5858Z' fill='white' /><path fill-rule='evenodd' clip-rule='evenodd' d='M1 12C1 5.92487 5.92487 1 12 1C18.0751 1 23 5.92487 23 12C23 18.0751 18.0751 23 12 23C5.92487 23 1 18.0751 1 12ZM12 21C7.02944 21 3 16.9706 3 12C3 7.02944 7.02944 3 12 3C16.9706 3 21 7.02944 21 12C21 16.9706 16.9706 21 12 21Z' fill='white' /></svg>")
+    no-repeat;
+  padding: 1.15rem;
+  width: 12rem;
+}
+
+.invoice__header {
+  @include flex-cotainer(1.5rem);
+  background-color: $header-color;
+  font-size: 1.4rem;
+  border-radius: 1rem;
+  padding: 3rem;
+
+  &--heading {
+    color: $color-primary;
+  }
+
+  &--dates {
+    display: flex;
+    justify-content: flex-start;
+    gap: 2rem;
+  }
+
+  &--begin-date {
+    @include flex-cotainer(0.6rem);
+
+    input {
+      @include inputs($light-purple);
+    }
+  }
+
+  &--end-date {
+    @include flex-cotainer(0.6rem);
+
+    input {
+      @include inputs($color-extra-light-purple);
+    }
+  }
+
+  &--status {
+    @include flex-cotainer(0.6rem);
+
+    div {
+      background-color: $color-primary;
+      border-radius: 5px;
+    }
+
+    div select {
+      @include inputs($color-primary);
+      @include select-icon();
+    }
+
+    div select option {
+      color: $color-black;
+    }
+  }
+
+  &--client-type {
+    @include flex-cotainer(0.6rem);
+
+    div {
+      background-color: $color-blue;
+      border-radius: 5px;
+    }
+
+    div select {
+      @include inputs($color-extra-light-purple);
+      @include select-icon();
+    }
+
+    div select option {
+      color: $color-black;
+    }
+  }
+
+  &--note {
+    font-weight: 100;
+    color: grey;
+  }
+}

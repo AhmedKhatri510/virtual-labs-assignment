@@ -1,0 +1,46 @@
+*,
+*::after,
+*::before {
+  margin: 0;
+  padding: 0;
+  box-sizing: inherit;
+}
+
+html {
+  //this defines what 1rem is
+  font-size: 62.5%; // 1rem = 10px and 10/16 = 62.5%
+  font-family: "Lato", sans-serif;
+  // @include respond(tab-land){     //width<1200px
+  //     font-size: 56.25%;          //1rem = 9px and 9/16 = 56.25%
+  // }
+
+  // @include respond(tab-port){     //width<900px
+  //     font-size: 50%;             //1rem = 8px and 8/16 = 50%
+  // }
+
+  // @include respond(big-desktop){
+  //     font-size: 75%;             //1rem = 12px and 12/16 = 75%
+  // }
+}
+
+body {
+  box-sizing: border-box;
+  font-size: 1rem;
+  //   padding: 3rem;
+
+  //   @include respond(tab-port) {
+  //     padding: 0;
+  //   }
+}
+
+::-webkit-calendar-picker-indicator {
+  filter: invert(1);
+  padding: 0.25rem;
+  cursor: pointer;
+  border-radius: 3px;
+}
+
+// ::selection {
+//   background-color: $color-primary;
+//   color: $color-white;
+// }
