@@ -1,3 +1,15 @@
+#draft {
+  background-color: $color-primary;
+}
+
+#paid {
+  background-color: $light-purple;
+}
+
+#partial-payment {
+  background-color: $color-blue;
+}
+
 .table__container {
   margin-top: 2rem;
   display: flex;
@@ -5,12 +17,21 @@
   border-radius: 0.5rem;
   font-size: 1.4rem;
   gap: 2rem;
+  justify-content: center;
+  align-items: center;
+
+  &--body {
+    height: 35vh;
+  }
 
   &--body,
   &--head {
+    overflow: scroll;
+    scrollbar-width: thin;
     // display: flex;
-    background-color: white;
+    background-color: $color-white;
     border-radius: 1rem;
+    width: 100rem;
 
     &--sorting-icon {
       height: 1rem;
@@ -20,12 +41,38 @@
     tr {
       display: flex;
       justify-content: space-between;
+      align-items: center;
       padding: 2rem;
+      width: 100rem;
+      margin: auto;
+
+      td {
+        width: 11rem;
+        align-content: center;
+        color: $color-grey;
+      }
+
+      td:nth-child(-n + 2) {
+        color: $light-purple;
+      }
+
+      td:nth-last-child(2),
+      td:nth-last-child(3) {
+        color: $color-primary;
+      }
+
+      td:last-child {
+        color: $color-white;
+        padding: 0.4rem;
+        border-radius: 0.6rem;
+        text-align: center;
+      }
 
       th {
         display: flex;
         align-items: center;
-        gap: 1rem;
+        gap: 0.5rem;
+        width: 10rem;
       }
     }
   }

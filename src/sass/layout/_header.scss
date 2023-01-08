@@ -90,7 +90,10 @@
   font-size: 1.4rem;
   border-radius: 1rem;
   padding: 3rem;
-  max-width: 100%;
+  // max-width: 100%;
+  width: 100rem;
+  // height: 35vh;
+  height: 100%;
 
   &--heading {
     color: $color-primary;

@@ -1,0 +1,15 @@
+@import "../abstract/variables";
+
+.invoice__container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  background-color: $color-super-extra-light-purple;
+  padding: 3rem;
+  width: 100%;
+  min-width: 105rem;
+  height: 100vh;
+  overflow-y: hidden;
+  // overflow: hidden;
+}

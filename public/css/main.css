@@ -10,8 +10,6 @@
 html {
   font-size: 62.5%;
   font-family: "Lato", sans-serif;
-  background-color: rgba(168, 168, 255, 0.201);
-  padding: 3rem;
 }
 
 body {
@@ -26,6 +24,23 @@ body {
   border-radius: 3px;
 }
 
+::-webkit-scrollbar {
+  width: 2px;
+  height: 2px;
+}
+
+::-webkit-scrollbar-button {
+  background: transparent;
+}
+
+::-webkit-scrollbar-track-piece {
+  background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  background: rgb(203, 203, 203);
+}
+
 .invoice__header {
   display: flex;
   flex-direction: column;
@@ -34,7 +49,8 @@ body {
   font-size: 1.4rem;
   border-radius: 1rem;
   padding: 3rem;
-  max-width: 100%;
+  width: 100rem;
+  height: 100%;
 }
 .invoice__header--heading {
   color: rgba(224, 102, 102, 0.5019607843);
@@ -131,6 +147,18 @@ body {
   color: grey;
 }
 
+#draft {
+  background-color: rgba(224, 102, 102, 0.5019607843);
+}
+
+#paid {
+  background-color: rgb(82, 82, 255);
+}
+
+#partial-payment {
+  background-color: rgba(0, 0, 255, 0.443);
+}
+
 .table__container {
   margin-top: 2rem;
   display: flex;
@@ -138,10 +166,18 @@ body {
   border-radius: 0.5rem;
   font-size: 1.4rem;
   gap: 2rem;
+  justify-content: center;
+  align-items: center;
+}
+.table__container--body {
+  height: 35vh;
 }
 .table__container--body, .table__container--head {
+  overflow: scroll;
+  scrollbar-width: thin;
   background-color: white;
   border-radius: 1rem;
+  width: 100rem;
 }
 .table__container--body--sorting-icon, .table__container--head--sorting-icon {
   height: 1rem;
@@ -150,10 +186,45 @@ body {
 .table__container--body tr, .table__container--head tr {
   display: flex;
   justify-content: space-between;
+  align-items: center;
   padding: 2rem;
+  width: 100rem;
+  margin: auto;
+}
+.table__container--body tr td, .table__container--head tr td {
+  width: 11rem;
+  align-content: center;
+  color: grey;
+}
+.table__container--body tr td:nth-child(-n+2), .table__container--head tr td:nth-child(-n+2) {
+  color: rgb(82, 82, 255);
+}
+.table__container--body tr td:nth-last-child(2),
+.table__container--body tr td:nth-last-child(3), .table__container--head tr td:nth-last-child(2),
+.table__container--head tr td:nth-last-child(3) {
+  color: rgba(224, 102, 102, 0.5019607843);
+}
+.table__container--body tr td:last-child, .table__container--head tr td:last-child {
+  color: white;
+  padding: 0.4rem;
+  border-radius: 0.6rem;
+  text-align: center;
 }
 .table__container--body tr th, .table__container--head tr th {
   display: flex;
   align-items: center;
-  gap: 1rem;
+  gap: 0.5rem;
+  width: 10rem;
+}
+
+.invoice__container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: rgba(168, 168, 255, 0.201);
+  padding: 3rem;
+  width: 100%;
+  min-width: 105rem;
+  height: 100vh;
+  overflow-y: hidden;
 }

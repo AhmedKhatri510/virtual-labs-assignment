@@ -12,8 +12,7 @@ html {
   //this defines what 1rem is
   font-size: 62.5%; // 1rem = 10px and 10/16 = 62.5%
   font-family: "Lato", sans-serif;
-  background-color: $color-super-extra-light-purple;
-  padding: 3rem;
+
   // @include respond(tab-land){     //width<1200px
   //     font-size: 56.25%;          //1rem = 9px and 9/16 = 56.25%
   // }
@@ -30,6 +29,7 @@ html {
 body {
   box-sizing: border-box;
   font-size: 1rem;
+
   //   padding: 3rem;
 
   //   @include respond(tab-port) {
@@ -48,3 +48,17 @@ body {
 //   background-color: $color-primary;
 //   color: $color-white;
 // }
+
+::-webkit-scrollbar {
+  width: 2px;
+  height: 2px;
+}
+::-webkit-scrollbar-button {
+  background: transparent;
+}
+::-webkit-scrollbar-track-piece {
+  background: transparent;
+}
+::-webkit-scrollbar-thumb {
+  background: rgb(203, 203, 203);
+}

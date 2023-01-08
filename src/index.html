@@ -5,113 +5,115 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="/css/main.css" />
-    <script type="module" src="/scripts/index.js"></script>
+    <script defer type="module" src="/scripts/index.js"></script>
     <title>Invoices Detail</title>
   </head>
   <body>
-    <header class="invoice__header">
-      <h1 class="invoice__header--heading">All Invoices</h1>
-      <div class="invoice__header--dates">
-        <div class="invoice__header--begin-date">
-          <label for="begin-date"><strong>Begin Date</strong></label>
-          <input type="date" name="begin-date" id="begin-date" />
-        </div>
-        <div class="invoice__header--end-date">
-          <label for="end-date"><strong>End Date</strong></label>
-          <input type="date" name="end-date" id="end-date" />
-        </div>
-        <div class="invoice__header--status">
-          <label for="status"><strong>Status</strong></label>
-          <div>
-            <select id="status">
-              <option value="">Any</option>
-              <option value="draft">Draft</option>
-              <option value="paid">Paid</option>
-              <option value="partial-payment">Partial Payment</option>
-            </select>
+    <div class="invoice__container">
+      <header class="invoice__header">
+        <h1 class="invoice__header--heading">All Invoices</h1>
+        <div class="invoice__header--dates">
+          <div class="invoice__header--begin-date">
+            <label for="begin-date"><strong>Begin Date</strong></label>
+            <input type="date" name="begin-date" id="begin-date" />
+          </div>
+          <div class="invoice__header--end-date">
+            <label for="end-date"><strong>End Date</strong></label>
+            <input type="date" name="end-date" id="end-date" />
+          </div>
+          <div class="invoice__header--status">
+            <label for="status"><strong>Status</strong></label>
+            <div>
+              <select id="status">
+                <option value="">Any</option>
+                <option value="draft">Draft</option>
+                <option value="paid">Paid</option>
+                <option value="partial-payment">Partial Payment</option>
+              </select>
+            </div>
+          </div>
+          <div class="invoice__header--client-type">
+            <label for="client-type"><strong>Client Type</strong></label>
+            <div>
+              <select id="client-type">
+                <option value="">Any</option>
+                <option value="in-state">In-state</option>
+                <option value="out-state">Out-state</option>
+              </select>
+            </div>
           </div>
         </div>
-        <div class="invoice__header--client-type">
-          <label for="client-type"><strong>Client Type</strong></label>
-          <div>
-            <select id="client-type">
-              <option value="">Any</option>
-              <option value="in-state">In-state</option>
-              <option value="out-state">Out-state</option>
-            </select>
-          </div>
-        </div>
-      </div>
-      <p class="invoice__header--note">
-        *This data has been shown according to your given information.
-      </p>
-    </header>
-    <table class="table__container">
-      <thead class="table__container--head">
-        <tr>
-          <th>
-            <span>Invoice</span>
-            <img
-              src="./images/up-down-arrow.svg"
-              class="table__container--head--sorting-icon"
-            />
-          </th>
-          <th>
-            <span>Client Name</span>
-            <img
-              src="./images/up-down-arrow.svg"
-              class="table__container--head--sorting-icon"
-            />
-          </th>
-          <th>
-            <span>Date</span>
-            <img
-              src="./images/up-down-arrow.svg"
-              class="table__container--head--sorting-icon"
-            />
-          </th>
-          <th>
-            <span>Due Date</span>
-            <img
-              src="./images/up-down-arrow.svg"
-              class="table__container--head--sorting-icon"
-            />
-          </th>
-          <th>
-            <span>Total</span>
-            <img
-              src="./images/up-down-arrow.svg"
-              class="table__container--head--sorting-icon"
-            />
-          </th>
-          <th>
-            <span>Balance</span>
-            <img
-              src="./images/up-down-arrow.svg"
-              class="table__container--head--sorting-icon"
-            />
-          </th>
-          <th>
-            <span>Status</span>
-            <img
-              src="./images/up-down-arrow.svg"
-              class="table__container--head--sorting-icon"
-            />
-          </th>
-        </tr>
-      </thead>
-      <tbody class="table__container--body">
-        <tr>
-          <td>Emil</td>
-          <td>Tobias</td>
-          <td>Linus</td>
-        </tr>
-        <tr>
-          <td>16</td>
-          <td>14</td>
-          <td>10</td>
-        </tr>
-      </tbody>
-    </table>
+        <p class="invoice__header--note">
+          *This data has been shown according to your given information.
+        </p>
+      </header>
+      <table class="table__container">
+        <thead class="table__container--head">
+          <tr>
+            <th>
+              <span>Invoice</span>
+              <img
+                src="./images/up-down-arrow.svg"
+                class="table__container--head--sorting-icon"
+              />
+            </th>
+            <th>
+              <span>Client Name</span>
+              <img
+                src="./images/up-down-arrow.svg"
+                class="table__container--head--sorting-icon"
+              />
+            </th>
+            <th>
+              <span>Date</span>
+              <img
+                src="./images/up-down-arrow.svg"
+                class="table__container--head--sorting-icon"
+              />
+            </th>
+            <th>
+              <span>Due Date</span>
+              <img
+                src="./images/up-down-arrow.svg"
+                class="table__container--head--sorting-icon"
+              />
+            </th>
+            <th>
+              <span>Total</span>
+              <img
+                src="./images/up-down-arrow.svg"
+                class="table__container--head--sorting-icon"
+              />
+            </th>
+            <th>
+              <span>Balance</span>
+              <img
+                src="./images/up-down-arrow.svg"
+                class="table__container--head--sorting-icon"
+              />
+            </th>
+            <th>
+              <span>Status</span>
+              <img
+                src="./images/up-down-arrow.svg"
+                class="table__container--head--sorting-icon"
+              />
+            </th>
+          </tr>
+        </thead>
+        <tbody class="table__container--body">
+          <!-- <tr>
+            <td>Emil</td>
+            <td>Tobias</td>
+            <td>Linus</td>
+          </tr>
+          <tr>
+            <td>16</td>
+            <td>14</td>
+            <td>10</td>
+          </tr> -->
+        </tbody>
+      </table>
+    </div>
   </body>
 </html>
