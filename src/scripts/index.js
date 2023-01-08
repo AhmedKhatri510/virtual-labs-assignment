@@ -1,43 +1,30 @@
 // import arr from "../constants/tableData";
 import arr from "./constants/tableData.js";
+import convertDate from "./helper/convertDate.js";
+let arrData = arr;
+const tbody = document.getElementsByClassName("table__container--body")[0];
+//if beginDate and endDate both are empty, then put the data in table body without filter
+//if beginDate and endDate both are there, then filter the data, clear the body and insert the data
 
-console.log(arr);
+//getting begin date
+const beginDate = document.getElementById("begin-date");
 
-window.onload = function () {
-  const tbody = document.getElementsByClassName("table__container--body")[0];
-  console.log(tbody);
-  let row, cell;
-
-  for (let i = 0; i < arr.length; i++) {
-    row = tbody.insertRow();
-
-    for (let [key, value] of Object.entries(arr[i])) {
-      if (key === "clientType") continue;
-      cell = row.insertCell();
-
-      if (String(value).toLowerCase().includes("draft")) {
-        cell.id = "draft";
-      }
-      if (String(value).toLowerCase().includes("paid")) {
-        cell.id = "paid";
-      }
-      if (String(value).toLowerCase().includes("partial payment")) {
-        cell.id = "partial-payment";
-      }
-
-      if (
-        key.toLowerCase().includes("total") ||
-        key.toLowerCase().includes("balance")
-      ) {
-        value = `$${value}`;
-      }
-      cell.innerHTML = value;
-
-      console.log(cell);
-    }
-  }
-
-  // row = tbody.insertRow();
-  // cell = row.insertCell();
-  // cell.innerHTML = "The first cell";
+//onchange function call
+beginDate.onchange = function (e) {
+  if (beginDate.value.length !== 0 && endDate.value.length !== 0)
+    loadData(beginDate.value, endDate.value);
 };
+
+//getting end date
+const endDate = document.getElementById("end-date");
+
+//onchange function call
+endDate.onchange = function (e) {
+  console.log(convertDate(e.target.valueAsDate));
+
+  if (beginDate.value.length !== 0 && endDate.value.length !== 0)
+    loadData(beginDate.value, endDate.value);
+};
+
+//on reload the data is loaded
+window.onload = loadData();
