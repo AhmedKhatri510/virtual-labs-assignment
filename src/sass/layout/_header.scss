@@ -90,6 +90,7 @@
   font-size: 1.4rem;
   border-radius: 1rem;
   padding: 3rem;
+  max-width: 100%;
 
   &--heading {
     color: $color-primary;
@@ -131,7 +132,8 @@
     }
 
     div select option {
-      color: $color-black;
+      //   color: $color-black;
+      background-color: $color-primary;
     }
   }
 
@@ -149,7 +151,8 @@
     }
 
     div select option {
-      color: $color-black;
+      //   color: $color-black;
+      background-color: $color-blue;
     }
   }
 
