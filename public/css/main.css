@@ -96,6 +96,7 @@ body {
   border-radius: 5px;
 }
 .invoice__header--status div select {
+  width: 15rem !important;
   background-color: rgba(224, 102, 102, 0.5019607843);
   padding: 1rem;
   border-radius: 5px;

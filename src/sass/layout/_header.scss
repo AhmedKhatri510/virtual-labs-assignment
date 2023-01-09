@@ -130,6 +130,7 @@
     }
 
     div select {
+      width: 15rem !important;
       @include inputs($color-primary);
       @include select-icon();
     }
