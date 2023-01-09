@@ -2,6 +2,7 @@
 import loadData from "./helper/loadData.js";
 
 import filterAndLoad from "./helper/filterAndLoad.js";
+import makeAllSortable from "./helper/makeAllSortable.js";
 
 //getting begin date
 const beginDate = document.getElementById("begin-date");
@@ -22,10 +23,12 @@ const clientType = document.getElementById("client-type");
 beginDate.onchange = function (e) {
   if (beginDate.value.length !== 0 && endDate.value.length !== 0) {
     filterAndLoad(beginDate, endDate, statusOfPayment, clientType);
+    makeAllSortable();
   }
 
   if (beginDate.value.length === 0 && endDate.value.length === 0) {
     filterAndLoad(beginDate, endDate, statusOfPayment, clientType);
+    makeAllSortable();
   }
 };
 
@@ -33,20 +36,27 @@ beginDate.onchange = function (e) {
 endDate.onchange = function (e) {
   if (beginDate.value.length !== 0 && endDate.value.length !== 0) {
     filterAndLoad(beginDate, endDate, statusOfPayment, clientType);
+    makeAllSortable();
   }
 
   if (beginDate.value.length === 0 && endDate.value.length === 0) {
     filterAndLoad(beginDate, endDate, statusOfPayment, clientType);
+    makeAllSortable();
   }
 };
 
 statusOfPayment.onchange = function (e) {
   filterAndLoad(beginDate, endDate, statusOfPayment, clientType);
+  makeAllSortable();
 };
 
 clientType.onchange = function (e) {
   filterAndLoad(beginDate, endDate, statusOfPayment, clientType);
+  makeAllSortable();
 };
 
 //on reload the data is loaded
-window.onload = loadData();
+window.onload = function () {
+  loadData();
+  makeAllSortable();
+};

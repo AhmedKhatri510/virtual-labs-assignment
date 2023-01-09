@@ -2,6 +2,8 @@ import arr from "../constants/tableData.js";
 
 export default function filterOnDate(beginDate = "", endDate = "") {
   let arrData = [];
+  if (beginDate.length === 0 && endDate.length === 0) return arr;
+
   if (beginDate.length !== 0 && endDate.length !== 0) {
     arrData = arr.filter(
       (data) =>

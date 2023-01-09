@@ -14,7 +14,6 @@ export default function filterAndLoad(
 
   const statusValue =
     statusOfPayment.options[statusOfPayment.selectedIndex].value;
-  console.log(statusValue, filteredOnDate);
 
   const filteredOnStatus = filterOnStatus(filteredOnDate, statusValue);
 

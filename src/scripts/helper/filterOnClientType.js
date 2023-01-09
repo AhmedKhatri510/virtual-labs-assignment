@@ -1,5 +1,4 @@
 export default function filterOnClientType(arrData, clientTypeValue) {
-  console.log(arrData, clientTypeValue);
   if (arrData.length === 0 || clientTypeValue.toLowerCase().includes("any"))
     return arrData;
 
