@@ -1,5 +1,10 @@
+// import arr from "../constants/tableData";
+import arr from "./constants/tableData.js";
 import convertDate from "./helper/convertDate.js";
-import loadData from "./helper/loadData.js";
+let arrData = arr;
+const tbody = document.getElementsByClassName("table__container--body")[0];
+//if beginDate and endDate both are empty, then put the data in table body without filter
+//if beginDate and endDate both are there, then filter the data, clear the body and insert the data
 
 //getting begin date
 const beginDate = document.getElementById("begin-date");
